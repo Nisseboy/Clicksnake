@@ -1,0 +1,31 @@
+body{
+  background-color: white;
+}
+
+.text {
+  font-family : "Lato", sans-serif;
+  text-align: center; 
+}
+.text h1 {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.text p {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.container{
+  height: 490px;
+  width: 490px;
+  background-color: white;
+  margin: auto;
+  padding: 10px;
+}
+
+.color {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  margin-left: 3px;
+}
