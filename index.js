@@ -21,19 +21,19 @@
 	function cssetup(){
 		if (!s) {
 		    document.addEventListener('keydown', function(event) {
-		        if(event.keyCode == 37&&!is(vel,[-1,0])) {
+		        if(event.keyCode == 37&&!is(vel,[1,0])) {
 		            vel = [-1,0];
 		            a=true;
 		        }
-		        else if(event.keyCode == 38&&!is(vel,[0,-1])) {
+		        else if(event.keyCode == 38&&!is(vel,[0,1])) {
 		            vel = [0,-1];
 		            a=true;
 		        }
-		        else if(event.keyCode == 39&&!is(vel,[1,0])) {
+		        else if(event.keyCode == 39&&!is(vel,[-1,0])) {
 		            vel = [1,0];
 		            a=true;
 		        }
-		        else if(event.keyCode == 40&&!is(vel,[0,1])) {
+		        else if(event.keyCode == 40&&!is(vel,[0,-1])) {
 		            vel = [0,1];
 		            a=true;
 		        }
