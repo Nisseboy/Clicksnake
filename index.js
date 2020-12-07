@@ -12,23 +12,28 @@
 
 	var cubes = "";
 	var cube = "";
-
+	function is(v1,v2) {
+		if(v1[0]==v2[0]&&v1[1]==v2[1]) {
+			return true;
+		}
+		return false;
+	}
 	function cssetup(){
 		if (!s) {
 		    document.addEventListener('keydown', function(event) {
-		        if(event.keyCode == 37) {
+		        if(event.keyCode == 37&&!is(vel,[-1,0])) {
 		            vel = [-1,0];
 		            a=true;
 		        }
-		        else if(event.keyCode == 38) {
+		        else if(event.keyCode == 38&&!is(vel,[0,-1])) {
 		            vel = [0,-1];
 		            a=true;
 		        }
-		        else if(event.keyCode == 39) {
+		        else if(event.keyCode == 39&&!is(vel,[1,0])) {
 		            vel = [1,0];
 		            a=true;
 		        }
-		        else if(event.keyCode == 40) {
+		        else if(event.keyCode == 40&&!is(vel,[0,1])) {
 		            vel = [0,1];
 		            a=true;
 		        }
