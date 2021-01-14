@@ -78,8 +78,7 @@
 	    for (let i = 0; i < cubes.length-1; i++) {
 	        cubes[i].style="background-image: url('images/" + imgs[img] + ".png');background-size: 50px 50px;";
 	    }
-		console.log(pos[0][0]);
-	    if (pos[0][0]<0||pos[0][0]>9||pos[0][1]<0||pos[0][1]>9) { 
+	    if (pos[0][0]<0||pos[0][0]>8||pos[0][1]<0||pos[0][1]>8) { 
 	        nextLevel();
 	    }
 	    for (let i = 1; i < pos.length; i++) {
