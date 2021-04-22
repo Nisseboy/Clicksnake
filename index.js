@@ -75,17 +75,18 @@
 	function next() {img = (img + 1) % imgs.length; nextLevel()}
 
 	function draw() {
+	    let dontRender = false;
 	    for (let i = 0; i < cubes.length-1; i++) {
 	        cubes[i].style="background-image: url('images/" + imgs[img] + ".png');background-size: 50px 50px;";
 	    }
 	    if (pos[0][0]<0||pos[0][0]>8||pos[0][1]<0||pos[0][1]>8) { 
 	        nextLevel();
-		return;
+		dontRender = true;
 	    }
 	    for (let i = 1; i < pos.length; i++) {
 	        if (pos[0][0] == pos[i][0] && pos[0][1] == pos[i][1]) {
 	            nextLevel();
-		    return;
+		    dontRender = true;
 	        }
 	    }
 	    isOcc(fPos,true);
@@ -106,10 +107,12 @@
 	        cube = cubes[Math.abs(fPos[0]+fPos[1]*9)%81];
 	        cube.style="background-image: url('images/me.png');-webkit-filter: invert(1);filter: invert(1);background-size: 50px 50px;";
 	    }
-	    pos.forEach(p=>{
-	        cube = cubes[Math.abs(p[0]+p[1]*9)];
-	        cube.style="background-image: url('images/" + imgs[img] + ".png');-webkit-filter: invert(1);filter: invert(1);background-size: 50px 50px;";
-	    });
+	    if (!dontRender) {
+		pos.forEach(p=>{
+		    cube = cubes[Math.abs(p[0]+p[1]*9)];
+		    cube.style="background-image: url('images/" + imgs[img] + ".png');-webkit-filter: invert(1);filter: invert(1);background-size: 50px 50px;";
+		});
+	    }
 	}
 	function isOcc(os,change){
 	    pos.forEach(p=>{
