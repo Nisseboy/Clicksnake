@@ -80,10 +80,12 @@
 	    }
 	    if (pos[0][0]<0||pos[0][0]>8||pos[0][1]<0||pos[0][1]>8) { 
 	        nextLevel();
+		    return;
 	    }
 	    for (let i = 1; i < pos.length; i++) {
 	        if (pos[0][0] == pos[i][0] && pos[0][1] == pos[i][1]) {
 	            nextLevel();
+			return;
 	        }
 	    }
 	    isOcc(fPos,true);
